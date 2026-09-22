@@ -1,0 +1,26 @@
+name: Executar Testes Unitarios
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Executar Testes
+        run: |
+          npm init -y
+          npm install jest --save-dev
+          npx jest
