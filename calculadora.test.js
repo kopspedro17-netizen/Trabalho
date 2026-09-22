@@ -23,3 +23,4 @@ test('4. Deve dividir dois numeros', () => {
 test('5. Deve verificar se o numero eh par', () => {
     expect(ehPar(4)).toBe(true);
 });
+
